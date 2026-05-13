@@ -26,32 +26,32 @@ To isolate the issue, I tested:
 
 ## Investigation steps
 ### Step 1 - Verify Host Connectivity
-Confirmed the host system had internet access
+Confirmed the host system had internet access  
 <img width="731" height="297" alt="host-internet-works" src="https://github.com/user-attachments/assets/16aedef7-b821-4f2f-bfcc-f6b24506ddb0" />
 
 ### Step 2 - Check VM IP address
-Used: `ip a` 
-<img width="832" height="260" alt="vm-valid-ip" src="https://github.com/user-attachments/assets/44544ff7-d2f8-4fb2-aeb2-809bc81ee51f" />
+Used: `ip a`   
+<img width="832" height="260" alt="vm-valid-ip" src="https://github.com/user-attachments/assets/44544ff7-d2f8-4fb2-aeb2-809bc81ee51f" />  
 Verified the VM has received an IP address.
 
 ### Step 3 - Test connectivity
-Used: `ping 8.8.8.8`
-<img width="552" height="195" alt="ping8 8 8 8-works" src="https://github.com/user-attachments/assets/f25c6ea6-009c-445f-b2f4-eae5d5e6186d" />
+Used: `ping 8.8.8.8`  
+<img width="552" height="195" alt="ping8 8 8 8-works" src="https://github.com/user-attachments/assets/f25c6ea6-009c-445f-b2f4-eae5d5e6186d" />   
 Ping to Google DNS succeeded
 
-Attempted: `ping google.com`
-<img width="441" height="35" alt="pinggoogle com-fails" src="https://github.com/user-attachments/assets/3c26cea5-37d0-433b-ae5d-6af023a352fd" />
+Attempted: `ping google.com`  
+<img width="441" height="35" alt="pinggoogle com-fails" src="https://github.com/user-attachments/assets/3c26cea5-37d0-433b-ae5d-6af023a352fd" />  
 This failed.
 
 ## Root cause
 The issue was caused by incorrect DNS configuration inside the guest VM.
 
 ## Solution
-Updated the `/etc/resolv.conf`:
-<img width="1277" height="801" alt="updated-resolv conf-bash" src="https://github.com/user-attachments/assets/29740c82-cd04-4fec-8028-7979f89a1754" />
+Updated the `/etc/resolv.conf`:  
+<img width="1277" height="801" alt="updated-resolv conf-bash" src="https://github.com/user-attachments/assets/29740c82-cd04-4fec-8028-7979f89a1754" />  
 
-Verified internet connectivity:
-<img width="795" height="197" alt="ping-google com-succeeds" src="https://github.com/user-attachments/assets/d9928d07-cb47-4c4b-b225-11f08879e70f" />
+Verified internet connectivity:  
+<img width="795" height="197" alt="ping-google com-succeeds" src="https://github.com/user-attachments/assets/d9928d07-cb47-4c4b-b225-11f08879e70f" />  
 Ping to google.com succeeds
 
 ## Lessons learned
