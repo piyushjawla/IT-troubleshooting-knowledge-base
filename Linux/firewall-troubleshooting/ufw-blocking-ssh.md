@@ -1,4 +1,4 @@
-<img width="645" height="526" alt="ssh-working-before-ufw" src="https://github.com/user-attachments/assets/8b84bf79-6ae2-4ca3-8247-0c945e8ae654" /># Linux Firewall troubleshooting using UFW (ssh blocked)
+# Linux Firewall troubleshooting using UFW (ssh blocked)
 
 ## Objective
 
